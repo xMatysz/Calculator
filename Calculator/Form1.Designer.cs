@@ -50,7 +50,6 @@
             // 
             // tbScreen
             // 
-            this.tbScreen.Enabled = false;
             this.tbScreen.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbScreen.Location = new System.Drawing.Point(22, 22);
             this.tbScreen.Name = "tbScreen";

@@ -10,8 +10,8 @@ namespace Calculator
     }
     public partial class Form1 : Form
     {
-        private string _firstValue;
-        private string _secondValue;
+        private string _firstValue = String.Empty;
+        private string _secondValue = String.Empty;
         private Operation _currentOperation = Operation.None;
         private bool _isTheResultOnTheScreen = false;
         public Form1()
@@ -27,7 +27,7 @@ namespace Calculator
             if(tbScreen.Text == "0" && clickedValue != ",")
                 tbScreen.Text = String.Empty;
 
-            if (_isTheResultOnTheScreen && _currentOperation == Operation.None)
+            if (_isTheResultOnTheScreen)
             {
                 _isTheResultOnTheScreen = false;
                 tbScreen.Text = String.Empty;
@@ -35,6 +35,10 @@ namespace Calculator
                 if (clickedValue == ",")
                     tbScreen.Text = "0";
             }
+
+            if(_currentOperation != Operation.None && clickedValue == "," && _secondValue == String.Empty)
+                tbScreen.Text += "0";
+
             tbScreen.Text += clickedValue;
 
             if(_currentOperation != Operation.None)
